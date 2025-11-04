@@ -1,9 +1,16 @@
 import "./App.css";
+import Header from "./component/Header/Header.jsx";
 
 function App() {
   return (
     <>
-      <h1 className="">BPL Dream XI</h1>
+      {/* header component: Header  */}
+      <Header></Header>
+
+      {/* main section  */}
+      <main className="w-11/12 mx-auto bg-green-200">
+        <p>main section</p>
+      </main>
     </>
   );
 }

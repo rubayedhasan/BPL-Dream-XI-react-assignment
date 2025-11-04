@@ -4,6 +4,11 @@
 /*import tailwindcss  */
 @import "tailwindcss";
 
+/* daisyui plugin  */
+@plugin "daisyui" {
+  themes: light --default;
+}
+
 /* common styles  */
 body {
   font-family: "Sora", sans-serif;
