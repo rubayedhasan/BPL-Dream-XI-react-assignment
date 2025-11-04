@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>BPL Dream XI</h1>
+      <h1 className="">BPL Dream XI</h1>
     </>
   );
 }
