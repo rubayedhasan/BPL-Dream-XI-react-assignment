@@ -3,7 +3,7 @@ import Coin from "../../assets/images/currency.png";
 
 const Navbar = () => {
   return (
-    <>
+    <div className="h-20">
       {/* show logo on the top only for small devices  */}
       <div className="flex md:hidden justify-center items-center mb-3.5">
         <figure className="w-14 h-14 flex justify-center items-center">
@@ -109,7 +109,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-    </>
+    </div>
   );
 };
 
