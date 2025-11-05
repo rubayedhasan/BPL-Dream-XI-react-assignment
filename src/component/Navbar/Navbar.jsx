@@ -1,7 +1,8 @@
+import PropTypes from "prop-types";
 import Logo from "../../assets/images/logo.png";
 import Coin from "../../assets/images/currency.png";
 
-const Navbar = () => {
+const Navbar = ({ credit }) => {
   return (
     <div className="lg:h-20">
       {/* show logo on the top only for small devices  */}
@@ -100,10 +101,10 @@ const Navbar = () => {
         </div>
 
         {/* show currency  */}
-        <div className="ml-0 lg:ml-[1.44rem] xl:ml-[2.88rem] max-w-40">
+        <div className="ml-0 lg:ml-[1.44rem] xl:ml-[2.88rem] max-w-60">
           <div className="flex justify-center items-center gap-[0.6rem] md:border md:border-[#1313131A] md:px-[1.2rem] md:py-[0.96rem] md:rounded-[0.72rem]">
             <p className="font-semibold text-[#131313] text-[0.83rem] md:text-[0.96rem]">
-              0 Coin
+              {credit} Coin
             </p>
             <img src={Coin} alt="currency" className="object-scale-down" />
           </div>
@@ -111,6 +112,11 @@ const Navbar = () => {
       </nav>
     </div>
   );
+};
+
+// define the prop types
+Navbar.propTypes = {
+  credit: PropTypes.number.isRequired,
 };
 
 export default Navbar;
