@@ -3,7 +3,7 @@ import Coin from "../../assets/images/currency.png";
 
 const Navbar = () => {
   return (
-    <div className="h-20">
+    <div className="lg:h-20">
       {/* show logo on the top only for small devices  */}
       <div className="flex md:hidden justify-center items-center mb-3.5">
         <figure className="w-14 h-14 flex justify-center items-center">
@@ -73,11 +73,11 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* menu show only for large devices */}
+        {/* navbar menu show only for large devices */}
         <div className="hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-[1.44rem] xl:gap-[2.88rem]">
             <li>
-              <a href="" className="text-[0.96rem] text-[#131313B3]">
+              <a href="" className="text-[0.96rem] text-[#131313]">
                 Home
               </a>
             </li>
