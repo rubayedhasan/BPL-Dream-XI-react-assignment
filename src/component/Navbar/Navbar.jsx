@@ -4,7 +4,7 @@ import Coin from "../../assets/images/currency.png";
 
 const Navbar = ({ credit }) => {
   return (
-    <div className="lg:h-20">
+    <div className="lg:h-24">
       {/* show logo on the top only for small devices  */}
       <div className="flex md:hidden justify-center items-center mb-3.5">
         <figure className="w-14 h-14 flex justify-center items-center">

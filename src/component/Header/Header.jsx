@@ -14,7 +14,7 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full md:w-11/12 mx-auto mt-12 px-5 md:px-0 lg:h-[calc(100%-14.04rem)]">
+    <div className="w-full md:w-11/12 mx-auto mt-12 px-5 md:px-0 lg:h-[calc(100%-3rem)]">
       {/* navbar component: Navbar  */}
       <Navbar credit={credit}></Navbar>
 

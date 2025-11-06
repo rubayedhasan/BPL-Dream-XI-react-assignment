@@ -5,7 +5,7 @@ import ShadowPicture from "../../assets/images/bg-shadow.png";
 const Banner = ({ handleAddCredit }) => {
   return (
     <div
-      className="flex flex-col justify-center items-center gap-[1.3rem] lg:gap-[1.44rem] mt-[1.44rem] p-[2.3rem] md:p-[3.84rem] bg-[#131313] bg-no-repeat bg-cover bg-blend-lighten border border-[#1313131A] rounded-[1.44rem] lg:h-full"
+      className="flex flex-col justify-center items-center gap-[1.3rem] lg:gap-[1.44rem] mt-[1.44rem] p-[2.3rem] md:p-[3.84rem] bg-[#131313] bg-no-repeat bg-cover bg-blend-lighten border border-[#1313131A] rounded-[1.44rem] lg:h-[calc(100%-7.45rem)]"
       style={{ backgroundImage: `url(${ShadowPicture})` }}
     >
       {/* banner image  */}
