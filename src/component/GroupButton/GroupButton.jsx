@@ -1,27 +1,56 @@
-const GroupButton = () => {
+import PropTypes from "prop-types";
+
+const GroupButton = ({ handleToggle, btnToggle }) => {
+  const { toggle } = btnToggle;
+
   return (
     <div className="flex justify-between items-center mb-8">
       {/* Active Button indicator  */}
       <div>
         <h3 className="font-bold text-[#131313] text-[1.68rem]">
-          Available Players
+          {toggle ? (
+            <span>Available Players</span>
+          ) : (
+            <span> Selected Players (0/6)</span>
+          )}
         </h3>
       </div>
 
       {/* join Buttons  */}
       <div className="join">
         {/* available button  */}
-        <button className="px-[1.8rem] py-[0.9rem] border border-[#1313131A] bg-[#E7FE29] rounded-l-xl join-item font-bold text-[0.96rem] text-[#131313] cursor-pointer">
+        <button
+          onClick={() => handleToggle("available")}
+          className="px-[1.8rem] py-[0.9rem] border border-[#1313131A] rounded-l-xl join-item text-[0.96rem]  cursor-pointer"
+          style={{
+            color: toggle ? "#131313" : "#1313139C",
+            fontWeight: toggle ? "700" : "400",
+            backgroundColor: toggle ? "#E7FE29" : "#ffffff",
+          }}
+        >
           Available
         </button>
 
         {/* Select button  */}
-        <button className="px-[1.8rem] py-[0.9rem] border border-[#1313131A] rounded-r-xl join-item text-[0.96rem] text-[#1313139C] cursor-pointer">
+        <button
+          onClick={() => handleToggle("selected")}
+          className="px-[1.8rem] py-[0.9rem] border border-[#1313131A] rounded-r-xl join-item text-[0.96rem] cursor-pointer"
+          style={{
+            color: toggle ? "#1313139C" : "#131313",
+            fontWeight: toggle ? "400" : "700",
+            backgroundColor: toggle ? "#ffffff" : "#E7FE29",
+          }}
+        >
           Selected (0)
         </button>
       </div>
     </div>
   );
+};
+
+GroupButton.propTypes = {
+  handleToggle: PropTypes.func.isRequired,
+  btnToggle: PropTypes.object.isRequired,
 };
 
 export default GroupButton;

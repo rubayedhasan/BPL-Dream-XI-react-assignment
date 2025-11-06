@@ -1,7 +1,10 @@
+import Player from "../Player/Player";
+
 const Players = () => {
   return (
     <div>
-      <p>I'm From Players</p>
+      <p>Im from Players</p>
+      <Player></Player>
     </div>
   );
 };

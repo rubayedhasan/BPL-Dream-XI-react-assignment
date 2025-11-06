@@ -1,7 +1,7 @@
 const Player = () => {
   return (
     <div>
-      <p>I'm from Player </p>
+      <p>Player</p>
     </div>
   );
 };
