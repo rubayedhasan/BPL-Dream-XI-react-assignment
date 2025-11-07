@@ -7,10 +7,10 @@ const PlayersContainer = ({ handleToggle, btnToggle }) => {
 
   return (
     <>
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col-reverse md:flex-row gap-7 justify-between items-center">
         {/* Active Button indicator  */}
         <div>
-          <h3 className="font-bold text-[#131313] text-[1.68rem]">
+          <h3 className="font-bold text-[#131313] text-[1.35rem] md:text-[1.58rem] lg:text-[1.68rem]">
             {toggle ? (
               <span>Available Players</span>
             ) : (
@@ -24,7 +24,7 @@ const PlayersContainer = ({ handleToggle, btnToggle }) => {
           {/* available button  */}
           <button
             onClick={() => handleToggle("available")}
-            className="px-[1.8rem] py-[0.9rem] border border-[#1313131A] rounded-l-xl join-item text-[0.96rem]  cursor-pointer"
+            className="px-[1.45rem] md:px-[1.8rem] py-[0.76rem] md:py-[0.9rem] border border-[#1313131A] rounded-l-xl join-item text-[0.9rem] md:text-[0.96rem]  cursor-pointer"
             style={{
               color: toggle ? "#131313" : "#1313139C",
               fontWeight: toggle ? "700" : "400",
@@ -37,7 +37,7 @@ const PlayersContainer = ({ handleToggle, btnToggle }) => {
           {/* Select button  */}
           <button
             onClick={() => handleToggle("selected")}
-            className="px-[1.8rem] py-[0.9rem] border border-[#1313131A] rounded-r-xl join-item text-[0.96rem] cursor-pointer"
+            className="px-[1.45rem] md:px-[1.8rem] py-[0.76rem] md:py-[0.9rem] border border-[#1313131A] rounded-r-xl join-item text-[0.9rem] md:text-[0.96rem] cursor-pointer"
             style={{
               color: toggle ? "#1313139C" : "#131313",
               fontWeight: toggle ? "400" : "700",

@@ -32,7 +32,7 @@ function App() {
       <Header></Header>
 
       {/* main section  */}
-      <main className="w-full md:w-11/12 px-5 mx-auto mt-[5.28rem] md:px-0 ">
+      <main className="w-full md:w-11/12 px-5 mx-auto mt-[4.85rem] md:mt-[5.28rem] md:px-0 ">
         <PlayersContainer
           handleToggle={handleToggle}
           btnToggle={btnToggle}
