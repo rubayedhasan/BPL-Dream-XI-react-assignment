@@ -12,7 +12,7 @@ const Player = ({ player }) => {
       </figure>
 
       {/* player name  */}
-      <h4 className="flex items-center gap-[0.96rem] text-[#131313] text-[1.2rem] font-semibold">
+      <h4 className="flex items-center gap-[0.96rem] text-[#131313] text-base md:text-[1.2rem] font-semibold">
         <span>
           <FaUser />
         </span>{" "}
@@ -21,33 +21,37 @@ const Player = ({ player }) => {
 
       {/* player info  */}
       <div className="flex justify-between items-center mt-[0.96rem] pb-[0.96rem] border-b border-[#1313131A]">
-        <p className="flex items-center gap-[0.72rem] text-[0.96rem] text-[#13131366]">
+        <p className="flex items-center gap-[0.72rem] text-[0.85rem] md:text-[0.96rem] text-[#13131366]">
           <span>
             <BsFlagFill />
           </span>{" "}
           {country}
         </p>
-        <p className="text-[#131313] text-[0.85rem] px-[0.96rem] py-[0.55rem] bg-[#1313130D] rounded-lg">
+        <p className="text-[#131313] text-[0.75rem] md:text-[0.85rem] px-[0.96rem] py-[0.55rem] bg-[#1313130D] rounded-lg">
           {role}
         </p>
       </div>
 
       {/* rating text  */}
-      <h5 className="mt-[0.96rem] font-bold text-[0.96rem]">Rating</h5>
+      <h5 className="mt-[0.96rem] font-bold text-[0.85rem] md:text-[0.96rem]">
+        Rating
+      </h5>
 
       {/* bowling type  */}
-      <div className="flex justify-between items-center text-[0.96rem] mt-[0.96rem]">
+      <div className="flex justify-between items-center text-[0.85rem] md:text-[0.96rem] mt-[0.96rem]">
         <p className="text-[#131313] font-semibold">{bowlingType}</p>
-        <p className="text-[#131313B3]">{bowlingType}</p>
+        <p className="text-[#131313B3] text-right">{bowlingType}</p>
       </div>
 
       {/* selection info  */}
       <div className="flex justify-between items-center gap-5 mt-[0.96rem]">
-        <p className="text-[#131313] font-semibold">Price: ${biddingPrice}</p>
+        <p className="text-[#131313] text-[0.85rem] md:text-[0.96rem] font-semibold">
+          Price: ${biddingPrice}
+        </p>
 
         <div>
           <button
-            className="text-[#131313] text-[0.85rem] px-[0.96rem] py-[0.55rem] border border-[#1313131A] rounded-lg cursor-pointer"
+            className="text-[#131313] text-[0.72rem] md:text-[0.85rem] px-[0.85rem] md:px-[0.96rem] py-[0.45rem] md:py-[0.55rem] border border-[#1313131A] rounded-lg cursor-pointer"
             type="button"
           >
             Choose Player
