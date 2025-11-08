@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Header from "./component/Header/Header.jsx";
 import PlayersContainer from "./component/PlayersContainer/PlayersContainer.jsx";
+import FooterContainer from "./component/FooterContainer/FooterContainer.jsx";
 
 function App() {
   // state: toggle the join buttons
@@ -37,6 +38,9 @@ function App() {
           handleToggle={handleToggle}
           btnToggle={btnToggle}
         ></PlayersContainer>
+
+        {/* footer container section component: FooterContainer  */}
+        <FooterContainer></FooterContainer>
       </main>
     </>
   );
