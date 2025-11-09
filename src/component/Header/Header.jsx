@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Banner from "../Banner/Banner.jsx";
 import Navbar from "../Navbar/Navbar.jsx";
+import { toast } from "react-toastify";
 
 const Header = () => {
   // state: to add free credit
@@ -11,6 +12,15 @@ const Header = () => {
     const creditAmount = 6000000;
     const newCredit = credit + creditAmount;
     setCredit(newCredit);
+
+    // show toast
+    toast.success("Successfully..! Credit Transfer on your account.", {
+      position: "top-center",
+      autoClose: "3000",
+      pauseOnHover: false,
+      draggable: true,
+      closeOnClick: true,
+    });
   };
 
   return (
