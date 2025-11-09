@@ -38,10 +38,10 @@ function App() {
           handleToggle={handleToggle}
           btnToggle={btnToggle}
         ></PlayersContainer>
-
-        {/* footer container section component: FooterContainer  */}
-        <FooterContainer></FooterContainer>
       </main>
+
+      {/* footer container section component: FooterContainer  */}
+      <FooterContainer></FooterContainer>
     </>
   );
 }
