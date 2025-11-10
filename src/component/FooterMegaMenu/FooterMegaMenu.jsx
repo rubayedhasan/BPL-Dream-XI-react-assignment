@@ -16,11 +16,13 @@ const FooterMegaMenu = () => {
       </div>
 
       {/* footer mega menu  */}
-      <div className="footer grid-cols-3 sm:footer-horizontal mt-[3.84rem]">
+      <div className="footer grid-cols-2 md:grid-cols-3 sm:footer-horizontal mt-[3.35rem] md:mt-[3.15rem] lg:mt-[3.84rem]">
         {/* about us block  */}
         <div>
-          <h5 className="font-semibold text-[1.1rem] text-white">About Us</h5>
-          <p className="text-[0.96rem] text-[#ffffff99] mt-[0.96rem]">
+          <h5 className="font-semibold text-[1rem] md:text-[1.1rem] text-white">
+            About Us
+          </h5>
+          <p className="text-[0.85rem] md:text-[0.96rem] text-[#ffffff99] mt-[0.85rem] md:mt-[0.96rem]">
             We are a passionate team dedicated to providing the best services to
             our customers.
           </p>
@@ -28,11 +30,11 @@ const FooterMegaMenu = () => {
 
         {/* quick links block  */}
         <nav className="mx-auto">
-          <h6 className="font-semibold text-[1.1rem] text-white">
+          <h6 className="font-semibold text-[1rem] md:text-[1.1rem] text-white">
             Quick Links
           </h6>
           <ul
-            className="list-disc list-inside text-[0.96rem] text-[#ffffff99] space-y-2.5 mt-[0.96rem]
+            className="list-disc list-inside text-[0.85rem] md:text-[0.96rem] text-[#ffffff99] space-y-1.5 md:space-y-2.5 mt-[0.85rem] md:mt-[0.96rem]
 "
           >
             <li>
@@ -51,14 +53,16 @@ const FooterMegaMenu = () => {
         </nav>
 
         {/* subscribe block */}
-        <form>
-          <h6 className="font-semibold text-[1.1rem] text-white">Subscribe</h6>
-          <p className="text-[0.96rem] text-[#ffffff99] mt-[0.96rem]">
+        <form className="col-span-2 md:col-span-1">
+          <h6 className="font-semibold text-[1rem] md:text-[1.1rem] text-white">
+            Subscribe
+          </h6>
+          <p className="text-[0.85rem] md:text-[0.96rem] text-[#ffffff99] mt-[0.85rem] md:mt-[0.96rem]">
             Subscribe to our newsletter for the latest updates.
           </p>
 
           {/* form field  */}
-          <div className="flex flex-col md:flex-row items-center gap-[0.96rem] w-full mt-[1.44rem]">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-[0.96rem] w-full mt-[1.3rem] md:mt-[1.44rem]">
             <div className="flex-1">
               <input
                 type="email"
@@ -68,9 +72,9 @@ const FooterMegaMenu = () => {
                 placeholder="Enter your email"
               />
             </div>
-            <div>
+            <div className="w-full lg:w-auto">
               <button
-                className="font-bold text-[0.96rem] text-[#131313] py-[0.76rem] px-[1.8rem] rounded-[0.72rem] bg-center bg-no-repeat bg-cover cursor-pointer inset-shadow-sm inset-shadow-[#1313134D]"
+                className="font-bold text-[0.96rem] text-[#131313] py-[0.76rem] px-[1.8rem] rounded-[0.72rem] bg-center bg-no-repeat bg-cover cursor-pointer inset-shadow-sm inset-shadow-[#1313134D] w-full lg:w-auto"
                 style={{ backgroundImage: `url(${BtnBgShadow})` }}
                 type="submit"
               >

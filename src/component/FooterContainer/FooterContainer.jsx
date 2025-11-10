@@ -13,8 +13,8 @@ const FooterContainer = () => {
       </div>
 
       {/* footer copy-right text  */}
-      <div className="py-[1.92rem] border border-[#ffffff26] mt-[4.32rem]">
-        <p className="text-[0.96rem] text-[#ffffff99] text-center">
+      <div className="py-[1.85rem] md:py-[1.92rem] border border-[#ffffff26] mt-[3.85rem] md:mt-[4.32rem]">
+        <p className="text-[0.85rem] md:text-[0.96rem] text-[#ffffff99] text-center">
           <small>@2025 Dream-11 All Rights Reserved.</small>
         </p>
       </div>
