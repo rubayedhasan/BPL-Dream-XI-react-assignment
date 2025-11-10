@@ -16,7 +16,7 @@ const FooterMegaMenu = () => {
       </div>
 
       {/* footer mega menu  */}
-      <div className="footer sm:footer-horizontal mt-[3.84rem]">
+      <div className="footer grid-cols-3 sm:footer-horizontal mt-[3.84rem]">
         {/* about us block  */}
         <div>
           <h5 className="font-semibold text-[1.1rem] text-white">About Us</h5>
@@ -27,7 +27,7 @@ const FooterMegaMenu = () => {
         </div>
 
         {/* quick links block  */}
-        <nav>
+        <nav className="mx-auto">
           <h6 className="font-semibold text-[1.1rem] text-white">
             Quick Links
           </h6>
