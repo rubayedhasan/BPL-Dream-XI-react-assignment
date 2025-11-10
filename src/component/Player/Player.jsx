@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { FaUser } from "react-icons/fa6";
 import { BsFlagFill } from "react-icons/bs";
 
-const Player = ({ player }) => {
+const Player = ({ player, handleStorePlayers }) => {
   const { name, image, country, role, bowlingType, biddingPrice } = player;
   return (
     <div className="p-[1.56rem] border border-[#1313131A] rounded-[0.96rem]">
@@ -51,6 +51,7 @@ const Player = ({ player }) => {
 
         <div>
           <button
+            onClick={() => handleStorePlayers(player)}
             className="text-[#131313] text-[0.72rem] md:text-[0.85rem] px-[0.85rem] md:px-[0.96rem] py-[0.45rem] md:py-[0.55rem] border border-[#1313131A] rounded-lg cursor-pointer"
             type="button"
           >
@@ -64,6 +65,7 @@ const Player = ({ player }) => {
 
 Player.propTypes = {
   player: PropTypes.object.isRequired,
+  handleStorePlayers: PropTypes.func.isRequired,
 };
 
 export default Player;

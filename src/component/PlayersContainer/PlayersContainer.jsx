@@ -1,9 +1,19 @@
 import PropTypes from "prop-types";
 import Players from "../Players/Players";
 import PlayersCart from "../PlayersCart/PlayersCart";
+import { useState } from "react";
 
 const PlayersContainer = ({ handleToggle, btnToggle }) => {
   const { toggle } = btnToggle;
+
+  // state: get the players for player on clicking choose button
+  const [carts, setCarts] = useState([]);
+
+  // function: handle the store players on the carts
+  const handleStorePlayers = (singlePlayer) => {
+    const newCarts = [...carts, singlePlayer];
+    setCarts(newCarts);
+  };
 
   return (
     <>
@@ -44,14 +54,18 @@ const PlayersContainer = ({ handleToggle, btnToggle }) => {
               backgroundColor: toggle ? "#ffffff" : "#E7FE29",
             }}
           >
-            Selected (0)
+            Selected ({carts.length})
           </button>
         </div>
       </div>
 
       {/* Players or PlayersCart Component base on Condition  */}
       <div className="mt-[1.92rem]">
-        {btnToggle.toggle ? <Players></Players> : <PlayersCart></PlayersCart>}
+        {btnToggle.toggle ? (
+          <Players handleStorePlayers={handleStorePlayers}></Players>
+        ) : (
+          <PlayersCart carts={carts}></PlayersCart>
+        )}
       </div>
     </>
   );

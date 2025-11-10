@@ -7,7 +7,7 @@ import FooterContainer from "./component/FooterContainer/FooterContainer.jsx";
 function App() {
   // state: toggle the join buttons
   const [btnToggle, setBtnToggle] = useState({
-    toggle: true,
+    toggle: false, // default true
     stage: "available",
   });
 
