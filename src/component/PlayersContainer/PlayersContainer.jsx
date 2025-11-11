@@ -34,6 +34,7 @@ const PlayersContainer = ({ handleToggle, btnToggle, availableCoin }) => {
 
   return (
     <>
+      {/* buttons  container  */}
       <div className="flex flex-col-reverse md:flex-row gap-7 justify-between items-center">
         {/* Active Button indicator  */}
         <div>
@@ -41,7 +42,7 @@ const PlayersContainer = ({ handleToggle, btnToggle, availableCoin }) => {
             {toggle ? (
               <span>Available Players</span>
             ) : (
-              <span> Selected Players (0/6)</span>
+              <span> Selected Players ({carts.length}/6)</span>
             )}
           </h3>
         </div>
