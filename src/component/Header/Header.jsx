@@ -1,9 +1,10 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import Banner from "../Banner/Banner.jsx";
 import Navbar from "../Navbar/Navbar.jsx";
 import { toast } from "react-toastify";
 
-const Header = () => {
+const Header = ({ handleAvailableCoin }) => {
   // state: to add free credit
   const [credit, setCredit] = useState(0);
 
@@ -23,6 +24,9 @@ const Header = () => {
     });
   };
 
+  // get the coin
+  handleAvailableCoin(credit);
+
   return (
     <div className="w-full md:w-11/12 mx-auto mt-12 px-5 md:px-0 lg:h-[calc(100%-3rem)]">
       {/* navbar component: Navbar  */}
@@ -34,4 +38,7 @@ const Header = () => {
   );
 };
 
+Header.propTypes = {
+  handleAvailableCoin: PropTypes.func,
+};
 export default Header;

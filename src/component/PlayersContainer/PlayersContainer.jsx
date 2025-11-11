@@ -2,8 +2,9 @@ import PropTypes from "prop-types";
 import Players from "../Players/Players";
 import PlayersCart from "../PlayersCart/PlayersCart";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
-const PlayersContainer = ({ handleToggle, btnToggle }) => {
+const PlayersContainer = ({ handleToggle, btnToggle, availableCoin }) => {
   const { toggle } = btnToggle;
 
   // state: get the players for player on clicking choose button
@@ -11,6 +12,22 @@ const PlayersContainer = ({ handleToggle, btnToggle }) => {
 
   // function: handle the store players on the carts
   const handleStorePlayers = (singlePlayer) => {
+    // validation: if there is not enough credit it will give alert
+    if (!availableCoin) {
+      toast.error(
+        "Error: You do not have enough credit to complete this purchase. Please add funds and try again.",
+        {
+          theme: "colored",
+          autoClose: 3000,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+        }
+      );
+      return;
+    }
+
+    // store the selected player
     const newCarts = [...carts, singlePlayer];
     setCarts(newCarts);
   };
@@ -74,6 +91,7 @@ const PlayersContainer = ({ handleToggle, btnToggle }) => {
 PlayersContainer.propTypes = {
   handleToggle: PropTypes.func.isRequired,
   btnToggle: PropTypes.object.isRequired,
+  availableCoin: PropTypes.number.isRequired,
 };
 
 export default PlayersContainer;

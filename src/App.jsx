@@ -11,6 +11,8 @@ function App() {
     stage: "available",
   });
 
+  const [availableCoin, setAvailableCoin] = useState(0);
+
   // function: handle buttons toggle functionality
   const handleToggle = (stage) => {
     if (stage.toLowerCase() === "available") {
@@ -27,16 +29,22 @@ function App() {
     });
   };
 
+  // function: handle the available coin
+  const handleAvailableCoin = (coin) => {
+    setAvailableCoin(coin);
+  };
+
   return (
     <>
       {/* header component: Header  */}
-      <Header></Header>
+      <Header handleAvailableCoin={handleAvailableCoin}></Header>
 
       {/* main section  */}
       <main className="w-full md:w-11/12 px-5 mx-auto mt-[4.85rem] md:mt-[5.28rem] md:px-0 ">
         <PlayersContainer
           handleToggle={handleToggle}
           btnToggle={btnToggle}
+          availableCoin={availableCoin}
         ></PlayersContainer>
       </main>
 
