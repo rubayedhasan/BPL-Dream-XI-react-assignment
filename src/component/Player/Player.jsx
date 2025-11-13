@@ -3,7 +3,8 @@ import { FaUser } from "react-icons/fa6";
 import { BsFlagFill } from "react-icons/bs";
 
 const Player = ({ player, handleStorePlayers }) => {
-  const { name, image, country, role, bowlingType, biddingPrice } = player;
+  const { playerId, name, image, country, role, bowlingType, biddingPrice } =
+    player;
   return (
     <div className="p-[1.56rem] border border-[#1313131A] rounded-[0.96rem]">
       {/* picture of the player  */}
@@ -51,7 +52,7 @@ const Player = ({ player, handleStorePlayers }) => {
 
         <div>
           <button
-            onClick={() => handleStorePlayers(player)}
+            onClick={() => handleStorePlayers(playerId, player)}
             className="text-[#131313] text-[0.72rem] md:text-[0.85rem] px-[0.85rem] md:px-[0.96rem] py-[0.45rem] md:py-[0.55rem] border border-[#1313131A] rounded-lg cursor-pointer"
             type="button"
           >

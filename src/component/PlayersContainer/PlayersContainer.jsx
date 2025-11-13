@@ -11,11 +11,20 @@ const PlayersContainer = ({ handleToggle, btnToggle, availableCoin }) => {
   const [carts, setCarts] = useState([]);
 
   // function: handle the store players on the carts
-  const handleStorePlayers = (singlePlayer) => {
+  const handleStorePlayers = (id, singlePlayer) => {
     // validation: if there is not enough credit it will give alert
     if (!availableCoin) {
       toast.error(
         "Error: You do not have enough credit to complete this purchase. Please add funds and try again."
+      );
+      return;
+    }
+
+    // validation: no duplication of players
+    const containPlayer = carts.find((p) => p.playerId === id);
+    if (containPlayer) {
+      toast.warn(
+        "This player is already listed. Please select a different player"
       );
       return;
     }
