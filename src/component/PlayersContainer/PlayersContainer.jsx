@@ -82,7 +82,7 @@ const PlayersContainer = ({ handleToggle, btnToggle, availableCoin }) => {
         {btnToggle.toggle ? (
           <Players handleStorePlayers={handleStorePlayers}></Players>
         ) : (
-          <PlayersCart carts={carts}></PlayersCart>
+          <PlayersCart carts={carts} handleToggle={handleToggle}></PlayersCart>
         )}
       </div>
     </>
