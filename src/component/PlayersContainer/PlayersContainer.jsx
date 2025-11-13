@@ -15,14 +15,7 @@ const PlayersContainer = ({ handleToggle, btnToggle, availableCoin }) => {
     // validation: if there is not enough credit it will give alert
     if (!availableCoin) {
       toast.error(
-        "Error: You do not have enough credit to complete this purchase. Please add funds and try again.",
-        {
-          theme: "colored",
-          autoClose: 3000,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: true,
-        }
+        "Error: You do not have enough credit to complete this purchase. Please add funds and try again."
       );
       return;
     }
@@ -30,6 +23,9 @@ const PlayersContainer = ({ handleToggle, btnToggle, availableCoin }) => {
     // store the selected player
     const newCarts = [...carts, singlePlayer];
     setCarts(newCarts);
+
+    // show successfully alert
+    toast.success("Congratulations! The player has been added successfully.");
   };
 
   return (

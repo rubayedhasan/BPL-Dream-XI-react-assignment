@@ -6,7 +6,16 @@ import { ToastContainer } from "react-toastify";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    {/*  root */}
     <App />
-    <ToastContainer />
+
+    {/* toast container to show toast  */}
+    <ToastContainer
+      theme={"colored"}
+      autoClose={3000}
+      closeOnClick={true}
+      pauseOnHover={false}
+      draggable={true}
+    />
   </StrictMode>
 );

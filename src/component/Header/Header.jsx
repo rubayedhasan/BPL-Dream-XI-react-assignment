@@ -17,10 +17,6 @@ const Header = ({ handleAvailableCoin }) => {
     // show toast
     toast.success("Successfully..! Credit Transfer on your account.", {
       position: "top-center",
-      autoClose: "3000",
-      pauseOnHover: false,
-      draggable: true,
-      closeOnClick: true,
     });
   };
 
