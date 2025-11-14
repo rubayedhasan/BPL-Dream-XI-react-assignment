@@ -11,7 +11,11 @@ function App() {
     stage: "available",
   });
 
+  // state: get available coin
   const [availableCoin, setAvailableCoin] = useState(0);
+
+  // state: get remaining available coin
+  const [playerFee, setPlayerFee] = useState(0);
 
   // function: handle buttons toggle functionality
   const handleToggle = (stage) => {
@@ -34,10 +38,18 @@ function App() {
     setAvailableCoin(coin);
   };
 
+  // function: get the remaining available coin
+  const handlePlayerFee = (fee) => {
+    setPlayerFee(fee);
+  };
+
   return (
     <>
       {/* header component: Header  */}
-      <Header handleAvailableCoin={handleAvailableCoin}></Header>
+      <Header
+        handleAvailableCoin={handleAvailableCoin}
+        playerFee={playerFee}
+      ></Header>
 
       {/* main section  */}
       <main className="w-full md:w-11/12 px-5 mx-auto mt-[4.85rem] md:mt-[5.28rem] md:px-0 ">
@@ -45,6 +57,7 @@ function App() {
           handleToggle={handleToggle}
           btnToggle={btnToggle}
           availableCoin={availableCoin}
+          handlePlayerFee={handlePlayerFee}
         ></PlayersContainer>
       </main>
 

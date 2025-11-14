@@ -4,7 +4,12 @@ import PlayersCart from "../PlayersCart/PlayersCart";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-const PlayersContainer = ({ handleToggle, btnToggle, availableCoin }) => {
+const PlayersContainer = ({
+  handleToggle,
+  btnToggle,
+  availableCoin,
+  handlePlayerFee,
+}) => {
   const { toggle } = btnToggle;
 
   // state: get the players for player on clicking choose button
@@ -21,7 +26,7 @@ const PlayersContainer = ({ handleToggle, btnToggle, availableCoin }) => {
     }
 
     // validation: no duplication of players
-    const containPlayer = carts.find((p) => p.playerId === id);
+    const containPlayer = carts.find((p) => p?.playerId === id);
     if (containPlayer) {
       toast.warn(
         "This player is already listed. Please select a different player"
@@ -35,6 +40,8 @@ const PlayersContainer = ({ handleToggle, btnToggle, availableCoin }) => {
 
     // show successfully alert
     toast.success("Congratulations! The player has been added successfully.");
+
+    handlePlayerFee(singlePlayer?.biddingPrice);
   };
 
   return (
@@ -98,6 +105,7 @@ PlayersContainer.propTypes = {
   handleToggle: PropTypes.func.isRequired,
   btnToggle: PropTypes.object.isRequired,
   availableCoin: PropTypes.number.isRequired,
+  handlePlayerFee: PropTypes.func.isRequired,
 };
 
 export default PlayersContainer;

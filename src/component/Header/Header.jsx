@@ -1,12 +1,22 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Banner from "../Banner/Banner.jsx";
 import Navbar from "../Navbar/Navbar.jsx";
 import { toast } from "react-toastify";
 
-const Header = ({ handleAvailableCoin }) => {
+const Header = ({ handleAvailableCoin, playerFee }) => {
   // state: to add free credit
   const [credit, setCredit] = useState(0);
+
+  useEffect(() => {
+    // validation effect
+    if (!playerFee) {
+      return;
+    }
+
+    // update the credit after purchase the player
+    setCredit((c) => c - playerFee);
+  }, [playerFee]);
 
   // function:: to add the credit
   const handleAddCredit = () => {
@@ -35,6 +45,7 @@ const Header = ({ handleAvailableCoin }) => {
 };
 
 Header.propTypes = {
-  handleAvailableCoin: PropTypes.func,
+  handleAvailableCoin: PropTypes.func.isRequired,
+  playerFee: PropTypes.number.isRequired,
 };
 export default Header;
