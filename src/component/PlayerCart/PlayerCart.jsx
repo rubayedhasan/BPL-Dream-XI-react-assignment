@@ -32,7 +32,7 @@ const PlayerCart = ({ cart, handleRemovePlayer }) => {
       <div>
         <button
           onClick={() => {
-            handleRemovePlayer(playerId);
+            handleRemovePlayer(playerId, name);
           }}
           className="text-[#F14749] text-3xl cursor-pointer"
           type="button"

@@ -59,9 +59,16 @@ const PlayersContainer = ({
   };
 
   // function: remove the player from the cart list
-  const handleRemovePlayer = (id) => {
+  const handleRemovePlayer = (id, playerName) => {
+    // remove the player
     const remainingPlayers = carts.filter((p) => p.playerId !== id);
     setCarts(remainingPlayers);
+
+    // show toast
+    toast.success(`${playerName} is remove from your team`, {
+      position: "top-left",
+      theme: "light",
+    });
   };
 
   return (
