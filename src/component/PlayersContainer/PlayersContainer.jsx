@@ -36,12 +36,15 @@ const PlayersContainer = ({
 
     // validation: available coin (credit) must more than player biddingPrice (player fee)
     if (singlePlayer?.biddingPrice > availableCoin) {
-      toast.error(
-        "You don not have enough credit to add this player in your team",
-        {
-          position: "top-center",
-        }
-      );
+      toast.error("You lack the necessary credit to add this player.", {
+        position: "top-center",
+      });
+      return;
+    }
+
+    // validation: don't add more than 6 players
+    if (carts.length > 5) {
+      toast.warn("You've reached the team limit. Maximum 6 players allowed.");
       return;
     }
 
