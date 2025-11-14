@@ -34,6 +34,17 @@ const PlayersContainer = ({
       return;
     }
 
+    // validation: available coin (credit) must more than player biddingPrice (player fee)
+    if (singlePlayer?.biddingPrice > availableCoin) {
+      toast.error(
+        "You don not have enough credit to add this player in your team",
+        {
+          position: "top-center",
+        }
+      );
+      return;
+    }
+
     // store the selected player
     const newCarts = [...carts, singlePlayer];
     setCarts(newCarts);
