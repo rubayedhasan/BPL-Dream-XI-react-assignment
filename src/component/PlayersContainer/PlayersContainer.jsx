@@ -58,6 +58,12 @@ const PlayersContainer = ({
     handlePlayerFee(singlePlayer?.biddingPrice);
   };
 
+  // function: remove the player from the cart list
+  const handleRemovePlayer = (id) => {
+    const remainingPlayers = carts.filter((p) => p.playerId !== id);
+    setCarts(remainingPlayers);
+  };
+
   return (
     <>
       {/* buttons  container  */}
@@ -108,7 +114,11 @@ const PlayersContainer = ({
         {btnToggle.toggle ? (
           <Players handleStorePlayers={handleStorePlayers}></Players>
         ) : (
-          <PlayersCart carts={carts} handleToggle={handleToggle}></PlayersCart>
+          <PlayersCart
+            carts={carts}
+            handleToggle={handleToggle}
+            handleRemovePlayer={handleRemovePlayer}
+          ></PlayersCart>
         )}
       </div>
     </>

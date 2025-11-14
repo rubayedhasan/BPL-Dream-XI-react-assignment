@@ -2,13 +2,17 @@ import PropTypes from "prop-types";
 import PlayerCart from "../PlayerCart/PlayerCart";
 import Players from "../Players/Players";
 
-const PlayersCart = ({ carts, handleToggle }) => {
+const PlayersCart = ({ carts, handleToggle, handleRemovePlayer }) => {
   return (
     <div className="mt-[1.92rem]">
       {/* players carts container  */}
       <div className="space-y-[1.12rem] md:space-y-[1.44rem]">
         {carts.map((cart, idx) => (
-          <PlayerCart key={idx} cart={cart}></PlayerCart>
+          <PlayerCart
+            key={idx}
+            cart={cart}
+            handleRemovePlayer={handleRemovePlayer}
+          ></PlayerCart>
         ))}
       </div>
 
@@ -30,6 +34,7 @@ const PlayersCart = ({ carts, handleToggle }) => {
 PlayersCart.propTypes = {
   carts: PropTypes.array.isRequired,
   handleToggle: PropTypes.func,
+  handleRemovePlayer: PropTypes.func,
 };
 
 export default PlayersCart;

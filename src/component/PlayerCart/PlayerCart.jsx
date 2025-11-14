@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { GiTrashCan } from "react-icons/gi";
 
-const PlayerCart = ({ cart }) => {
-  const { name, image, bowlingType } = cart;
+const PlayerCart = ({ cart, handleRemovePlayer }) => {
+  const { playerId, name, image, bowlingType } = cart;
 
   return (
     <div className="p-[1.44rem] flex justify-between items-center gap-[1.44rem] border border-[#1313131A] rounded-[0.96rem]">
@@ -31,6 +31,9 @@ const PlayerCart = ({ cart }) => {
       {/* remove to cart button container  */}
       <div>
         <button
+          onClick={() => {
+            handleRemovePlayer(playerId);
+          }}
           className="text-[#F14749] text-3xl cursor-pointer"
           type="button"
         >
@@ -44,6 +47,7 @@ const PlayerCart = ({ cart }) => {
 // define the propTypes
 PlayerCart.propTypes = {
   cart: PropTypes.object.isRequired,
+  handleRemovePlayer: PropTypes.func,
 };
 
 export default PlayerCart;
