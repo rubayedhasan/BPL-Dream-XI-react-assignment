@@ -20,7 +20,10 @@ const PlayersContainer = ({
     // validation: if there is not enough credit it will give alert
     if (!availableCoin) {
       toast.error(
-        "Error: You do not have enough credit to complete this purchase. Please add funds and try again."
+        "Error: You do not have enough credit to complete this purchase. Please add funds and try again.",
+        {
+          position: "top-center",
+        }
       );
       return;
     }

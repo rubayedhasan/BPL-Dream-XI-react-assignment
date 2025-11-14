@@ -2,10 +2,10 @@ import PropTypes from "prop-types";
 import { GiTrashCan } from "react-icons/gi";
 
 const PlayerCart = ({ cart, handleRemovePlayer }) => {
-  const { name, image, bowlingType } = cart;
+  const { name, image, bowlingType, biddingPrice } = cart;
 
   return (
-    <div className="p-[1.44rem] flex justify-between items-center gap-[1.44rem] border border-[#1313131A] rounded-[0.96rem]">
+    <div className="p-[1.44rem] flex flex-col md:flex-row md:justify-between md:items-center gap-[1.05rem] border border-[#1313131A] rounded-[0.96rem]">
       {/* player information  container*/}
       <div className="flex flex-col md:flex-row md:justify-center md:items-center gap-[0.85rem] md:gap-[1.44rem]">
         {/* player image  */}
@@ -29,16 +29,24 @@ const PlayerCart = ({ cart, handleRemovePlayer }) => {
       </div>
 
       {/* remove to cart button container  */}
-      <div>
-        <button
-          onClick={() => {
-            handleRemovePlayer(cart);
-          }}
-          className="text-[#F14749] text-3xl cursor-pointer"
-          type="button"
-        >
-          <GiTrashCan />
-        </button>
+      <div className="flex justify-between items-center gap-[1.44rem]">
+        {/* player price  */}
+        <h5 className="font-semibold text-[1rem] md:text-[1.25rem] lg:text-[1.44rem] text-[#131313]">
+          ${biddingPrice}
+        </h5>
+
+        {/* remove button  */}
+        <div>
+          <button
+            onClick={() => {
+              handleRemovePlayer(cart);
+            }}
+            className="text-[#F14749] text-3xl cursor-pointer"
+            type="button"
+          >
+            <GiTrashCan />
+          </button>
+        </div>
       </div>
     </div>
   );

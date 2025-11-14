@@ -12,7 +12,7 @@ const Player = ({ player, handleStorePlayers }) => {
         <img src={image} alt={name} className=" w-full object-contain" />
       </figure>
 
-      {/* player name  */}
+      {/* player's name  */}
       <h4 className="flex items-center gap-[0.96rem] text-[#131313] text-base md:text-[1.2rem] font-semibold">
         <span>
           <FaUser />
@@ -22,12 +22,15 @@ const Player = ({ player, handleStorePlayers }) => {
 
       {/* player info  */}
       <div className="flex justify-between items-center mt-[0.96rem] pb-[0.96rem] border-b border-[#1313131A]">
+        {/*player's country  */}
         <p className="flex items-center gap-[0.72rem] text-[0.85rem] md:text-[0.96rem] text-[#13131366]">
           <span>
             <BsFlagFill />
           </span>{" "}
           {country}
         </p>
+
+        {/* player's role  */}
         <p className="text-[#131313] text-[0.75rem] md:text-[0.85rem] px-[0.96rem] py-[0.55rem] bg-[#1313130D] rounded-lg">
           {role}
         </p>
@@ -50,10 +53,11 @@ const Player = ({ player, handleStorePlayers }) => {
           Price: ${biddingPrice}
         </p>
 
+        {/* choose player button  */}
         <div>
           <button
             onClick={() => handleStorePlayers(playerId, player)}
-            className="text-[#131313] text-[0.72rem] md:text-[0.85rem] px-[0.85rem] md:px-[0.96rem] py-[0.45rem] md:py-[0.55rem] border border-[#1313131A] rounded-lg cursor-pointer"
+            className="text-[#131313] text-[0.72rem] md:text-[0.85rem] px-[0.85rem] md:px-[0.96rem] py-[0.45rem] md:py-[0.55rem] border border-[#1313131A] rounded-lg cursor-pointer hover:text-[#1313139C] hover:bg-[#E7FE29] hover:font-semibold transition-all duration-1000"
             type="button"
           >
             Choose Player
