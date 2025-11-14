@@ -11,11 +11,11 @@ function App() {
     stage: "available",
   });
 
-  // state: get available coin
+  // state: store your available coin or credit amount
   const [availableCoin, setAvailableCoin] = useState(0);
 
-  // state: get remaining available coin
-  const [playerFee, setPlayerFee] = useState(0);
+  // state: store the updated coin or credit amount
+  const [updatedCoin, setUpdatedCion] = useState(0);
 
   // function: handle buttons toggle functionality
   const handleToggle = (stage) => {
@@ -33,14 +33,14 @@ function App() {
     });
   };
 
-  // function: handle the available coin
+  // function: handle the available coin (to getting the credit from Header component)
   const handleAvailableCoin = (coin) => {
     setAvailableCoin(coin);
   };
 
-  // function: get the remaining available coin
-  const handlePlayerFee = (fee) => {
-    setPlayerFee(fee);
+  // function: handle update coin or credit after add or remove player to the cart (from PlayersContainer)
+  const handleUpdatedCoin = (coin) => {
+    setUpdatedCion(coin);
   };
 
   return (
@@ -48,16 +48,17 @@ function App() {
       {/* header component: Header  */}
       <Header
         handleAvailableCoin={handleAvailableCoin}
-        playerFee={playerFee}
+        updatedCoin={updatedCoin}
       ></Header>
 
       {/* main section  */}
       <main className="w-full md:w-11/12 px-5 mx-auto mt-[4.85rem] md:mt-[5.28rem] md:px-0 ">
+        {/* players cards section component: PlayersContainer */}
         <PlayersContainer
           handleToggle={handleToggle}
           btnToggle={btnToggle}
           availableCoin={availableCoin}
-          handlePlayerFee={handlePlayerFee}
+          handleUpdatedCoin={handleUpdatedCoin}
         ></PlayersContainer>
       </main>
 

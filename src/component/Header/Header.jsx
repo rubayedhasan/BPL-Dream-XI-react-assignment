@@ -4,21 +4,22 @@ import Banner from "../Banner/Banner.jsx";
 import Navbar from "../Navbar/Navbar.jsx";
 import { toast } from "react-toastify";
 
-const Header = ({ handleAvailableCoin, playerFee }) => {
-  // state: to add free credit
+const Header = ({ handleAvailableCoin, updatedCoin }) => {
+  // state: to store free credit.
   const [credit, setCredit] = useState(0);
 
+  // effect: handle the effect on updating the credit
   useEffect(() => {
     // validation effect
-    if (!playerFee) {
+    if (!updatedCoin) {
       return;
     }
 
-    // update the credit after purchase the player
-    setCredit((c) => c - playerFee);
-  }, [playerFee]);
+    // update the available coin or credit after add or remove player
+    setCredit(updatedCoin);
+  }, [updatedCoin]);
 
-  // function:: to add the credit
+  // function:: to add the credit on credit container (navbar)
   const handleAddCredit = () => {
     const creditAmount = 6000000;
     const newCredit = credit + creditAmount;
@@ -30,7 +31,7 @@ const Header = ({ handleAvailableCoin, playerFee }) => {
     });
   };
 
-  // get the coin
+  // share the available credit to other component (App, PlayersContainer)
   handleAvailableCoin(credit);
 
   return (
@@ -46,6 +47,7 @@ const Header = ({ handleAvailableCoin, playerFee }) => {
 
 Header.propTypes = {
   handleAvailableCoin: PropTypes.func.isRequired,
-  playerFee: PropTypes.number.isRequired,
+  updatedCoin: PropTypes.number.isRequired,
 };
+
 export default Header;

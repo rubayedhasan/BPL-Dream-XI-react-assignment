@@ -8,7 +8,7 @@ const PlayersContainer = ({
   handleToggle,
   btnToggle,
   availableCoin,
-  handlePlayerFee,
+  handleUpdatedCoin,
 }) => {
   const { toggle } = btnToggle;
 
@@ -55,20 +55,26 @@ const PlayersContainer = ({
     // show successfully alert
     toast.success("Congratulations! The player has been added successfully.");
 
-    handlePlayerFee(singlePlayer?.biddingPrice);
+    // decrease the available coin or credit after add the player to the cart
+    handleUpdatedCoin(availableCoin - singlePlayer?.biddingPrice);
   };
 
   // function: remove the player from the cart list
-  const handleRemovePlayer = (id, playerName) => {
+  const handleRemovePlayer = (removedPlayer) => {
     // remove the player
-    const remainingPlayers = carts.filter((p) => p.playerId !== id);
+    const remainingPlayers = carts.filter(
+      (p) => p?.playerId !== removedPlayer?.playerId
+    );
     setCarts(remainingPlayers);
 
     // show toast
-    toast.success(`${playerName} is remove from your team`, {
+    toast.success(`${removedPlayer?.name} is remove from your team`, {
       position: "top-left",
       theme: "light",
     });
+
+    // pass the removed players fee to increase the available coin or credit
+    handleUpdatedCoin(availableCoin + removedPlayer?.biddingPrice);
   };
 
   return (
@@ -136,7 +142,7 @@ PlayersContainer.propTypes = {
   handleToggle: PropTypes.func.isRequired,
   btnToggle: PropTypes.object.isRequired,
   availableCoin: PropTypes.number.isRequired,
-  handlePlayerFee: PropTypes.func.isRequired,
+  handleUpdatedCoin: PropTypes.func.isRequired,
 };
 
 export default PlayersContainer;

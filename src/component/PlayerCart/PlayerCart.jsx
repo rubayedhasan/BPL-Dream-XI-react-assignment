@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { GiTrashCan } from "react-icons/gi";
 
 const PlayerCart = ({ cart, handleRemovePlayer }) => {
-  const { playerId, name, image, bowlingType } = cart;
+  const { name, image, bowlingType } = cart;
 
   return (
     <div className="p-[1.44rem] flex justify-between items-center gap-[1.44rem] border border-[#1313131A] rounded-[0.96rem]">
@@ -32,7 +32,7 @@ const PlayerCart = ({ cart, handleRemovePlayer }) => {
       <div>
         <button
           onClick={() => {
-            handleRemovePlayer(playerId, name);
+            handleRemovePlayer(cart);
           }}
           className="text-[#F14749] text-3xl cursor-pointer"
           type="button"
