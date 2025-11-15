@@ -1,16 +1,32 @@
-# React + Vite
+# BPL DREAM 11
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a streamlined, user-friendly web application designed for selecting cricket players and building your own custom team. The interface displays 12 player cards, each containing selectable player information. Users can choose up to six players to form their team. Once selected, the chosen players are displayed in a dedicated cart section for easy review and management.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Responsive Design** – Optimized for all screen sizes and devices.
+- **User-Friendly Interface** – Simple and intuitive navigation for a smooth user experience.
+- **Dynamic Navbar** – Displays the user’s available total credits/coins in real time.
+- **Informative Banner** – Highlights key information, announcements, or instructions for better user guidance.
+- **Card-Based Layout** – Clean and organized player cards for easy selection.
+- **Flexible Selection Mechanism** – Allows users to pick and manage up to six players efficiently.
+- **Newsletter Contact Option** – Users can connect or subscribe via an integrated newsletter form.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **HTML, CSS** – Core structure and styling.
+- **Flexbox & CSS Grid** – Modern layout techniques for responsive design.
+- **Tailwind CSS & DaisyUI** – Utility-first styling and prebuilt UI components.
+- **JavaScript (ES6+)** – Using modern features such as `map`, `filter`, optional chaining, and destructuring.
+- **React.js** – A powerful JavaScript library for building user interfaces.
+- **React Components** – Modular and reusable UI building blocks.
+- **React Hooks** – Including `useState` and `useEffect` for state and lifecycle management.
+- **Props & PropTypes** – For type-safe component communication.
+- **React Icons** – Icon library for UI enhancements.
+- **React Toastify** – For elegant toast notifications.
 
-## Expanding the ESLint configuration
+## Deployment
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **GitHub Repository:** [View on GitHub](https://github.com/rubayedhasan/BPL-Dream-XI-react-assignment)
+- **Netlify Live Site:** [Visit Live Site](https://bpl-dream-xi-react.netlify.app/)
+- **Surge Live Site:** [Visit Surge Deployment](https://bpl-dream-xi-rsc.surge.sh)
