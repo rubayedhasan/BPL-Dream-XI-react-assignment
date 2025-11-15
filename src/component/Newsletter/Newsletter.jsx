@@ -1,5 +1,6 @@
 import ShadowPicture from "../../assets/images/bg-shadow.png";
 import BtnBgShadow from "../../assets/images/bg-btn.png";
+import { storeTheAddress } from "../../utilities/localStorage.js";
 
 const Newsletter = () => {
   return (
@@ -21,14 +22,21 @@ const Newsletter = () => {
             <div className="flex-1">
               <input
                 type="email"
-                name=""
-                id=""
+                name="email"
+                id="input-email-field"
                 className="input text-[0.96rem] text-[#131313B3] bg-white border border-[#13131326] py-[1.35rem] px-[1.8rem] rounded-[0.72rem] w-full block"
                 placeholder="Enter your email"
               />
             </div>
             <div>
               <button
+                onClick={(e) => {
+                  // stop the default re-loading
+                  e.preventDefault();
+
+                  // call the function to store the mail address
+                  storeTheAddress("input-email-field");
+                }}
                 className="font-bold text-[0.96rem] text-[#131313] py-[0.76rem] px-[1.8rem] rounded-[0.72rem] bg-center bg-no-repeat bg-cover cursor-pointer inset-shadow-sm inset-shadow-[#1313134D]"
                 style={{ backgroundImage: `url(${BtnBgShadow})` }}
                 type="submit"

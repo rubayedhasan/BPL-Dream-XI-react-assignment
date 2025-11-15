@@ -1,5 +1,6 @@
 import FooterLogo from "../../assets/images/logo-footer.png";
 import BtnBgShadow from "../../assets/images/bg-btn.png";
+import { storeTheAddress } from "../../utilities/localStorage.js";
 
 const FooterMegaMenu = () => {
   return (
@@ -66,14 +67,21 @@ const FooterMegaMenu = () => {
             <div className="flex-1">
               <input
                 type="email"
-                name=""
-                id=""
+                name="sub-email"
+                id="input-subEmail-field"
                 className="input text-[0.96rem] text-[#131313B3] bg-white border border-[#13131326] py-[1.35rem] px-[1.8rem] rounded-[0.72rem] w-full block"
                 placeholder="Enter your email"
               />
             </div>
             <div className="w-full lg:w-auto">
               <button
+                onClick={(e) => {
+                  // stop the default re-loading
+                  e.preventDefault();
+
+                  // call the function to store the mail address
+                  storeTheAddress("input-subEmail-field");
+                }}
                 className="font-bold text-[0.96rem] text-[#131313] py-[0.76rem] px-[1.8rem] rounded-[0.72rem] bg-center bg-no-repeat bg-cover cursor-pointer inset-shadow-sm inset-shadow-[#1313134D] w-full lg:w-auto"
                 style={{ backgroundImage: `url(${BtnBgShadow})` }}
                 type="submit"
