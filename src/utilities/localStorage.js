@@ -1,17 +1,39 @@
-// address store container
-const arrAddress = [];
+// address store containers
+
+// function:: get the stored address from local storage
+const getTheStoredAddress = () => {
+  const storedStringAddress = window.localStorage.getItem("address");
+
+  //   validation: checking if there in any address stored in the local storage
+  if (storedStringAddress) {
+    const storedAddress = JSON.parse(storedStringAddress);
+    return storedAddress;
+  }
+
+  //   if: local storage return null or no things are store there
+  return [];
+};
+
+// function:: pass the storedAddress to the local storage
+const passTheAddressToLocalStorage = (address) => {
+  const stringifyAddress = JSON.stringify(address);
+  window.localStorage.setItem("address", stringifyAddress);
+};
 
 // function: store the email address to the local storage
 const storeTheAddress = (fieldId) => {
-  // get the input field's value
-  const address = document.getElementById(fieldId).value;
+  // call: access the stored address (array)
+  const emails = getTheStoredAddress();
 
-  //   set or pass the address to the container
-  arrAddress.push(address);
+  // get the input field's value & store it in a container or array
+  const theAddress = document.getElementById(fieldId).value;
+  emails.push(theAddress);
 
-  const stringifyAddress = JSON.stringify(arrAddress);
+  //   call: pass the address to local Storage
+  passTheAddressToLocalStorage(emails);
 
-  window.localStorage.setItem("address", stringifyAddress);
+  //   clear the input field
+  document.getElementById(fieldId).value = "";
 };
 
 export { storeTheAddress };
